@@ -1,0 +1,453 @@
+@charset "UTF-8";
+
+html {
+    overflow: scroll;
+    scrollbar-width: none;
+    overflow-x: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #fff;
+    color: #fff;
+}
+
+body::-webkit-scrollbar {
+    width: 16px;
+}
+
+.main {
+    width: 500px;
+    margin: 0 auto;
+}
+
+.mainimg {
+    position: relative;
+    height: 70vh;
+}
+
+.mainimg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 1s ease-in-out;
+    opacity: 1;
+}
+
+.maintext {
+    position: absolute;
+    top: 5%;
+    width: 100%;
+    text-align: left;
+    color: #fd4c4c;
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.subtext {
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    text-align: right;
+    color: #fd4c4c;
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: -10px;
+}
+
+.header,
+.content {
+    background-color: #000;
+}
+
+.content {
+    padding: 20px 10px 100px;
+    text-align: center;
+}
+
+.titleimg {
+    width: 80%;
+    margin-bottom: 10px;
+}
+
+.slogan {
+    color: #ffcccc;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.desc {
+    font-size: 15px;
+    margin-bottom: 20px;
+    color: #ccc;
+}
+
+.btngroup {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.btn,
+.joinBut {
+    padding: 10px 20px;
+    background-color: #ffcccc;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    color: #000;
+}
+
+.join_modal-content input,
+.join_modal-content select {
+    width: 90%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-family: sans-serif;
+}
+
+.join_modal-content select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: #fff;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="10" viewBox="0 0 14 10"><polyline points="1,1 7,7 13,1" stroke="%23999" stroke-width="2" fill="none" stroke-linecap="round"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+}
+
+.loginBtn {
+    padding: 100px 20px;
+}
+
+.emo_text {
+    margin-bottom: 25px;
+}
+
+.emotionbtns,
+.emotion-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.emotion-buttons button {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 3px solid #ffcccc;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.emotion-buttons button:hover {
+    background-color: #ffcb05;
+    color: #fff;
+}
+
+.hover-text:hover {
+    color: #ffcccc;
+    background-color: white;
+    cursor: pointer;
+}
+
+.movie-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.movie-card {
+    width: 200px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    color: #000;
+}
+
+.movie-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.movie-card .info {
+    padding: 10px;
+}
+
+.movie-card .info h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.movie-card .info p {
+    font-size: 14px;
+    color: #555;
+}
+
+.modal-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    overflow-x: hidden;
+}
+
+.login_modal,
+.test_modal,
+.test1_modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.join_modal {
+    display: none;
+    position: fixed;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.login_modal-content,
+.test_modal-content,
+.test1_modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 15px;
+    width: 450px;
+    text-align: center;
+    color: #000;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.join_modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    width: 450px;
+    text-align: center;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login_modal-content input,
+.join_modal-content input {
+    width: 90%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.close-login,
+.close-join,
+.close-test,
+.close-test1 {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.survey-box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    color: #000;
+    width: 90%;
+    max-width: 500px;
+}
+
+.survey-box h3 {
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.survey-box .options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.survey-box .options button {
+    padding: 8px 16px;
+    border: 1px solid #aaa;
+    border-radius: 20px;
+    background-color: #f7f7f7;
+    cursor: pointer;
+}
+
+.survey-box .options button:hover {
+    background-color: #ffcccc;
+}
+
+.survey-box .submit-btn {
+    background-color: #ffcccc;
+    padding: 10px 30px;
+    border-radius: 20px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button.selected {
+    background-color: #ffcccc;
+    color: #000;
+}
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin-left: 36.9%;
+    max-width: 500px;
+    background-color: #ffcccc;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    border-top: 1px solid #ffcccc;
+    z-index: 1000;
+}
+
+.bottom-nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button.selected {
+    background-color: #ffcccc !important;
+    color: #000;
+}
+
+#nextBtn {
+    white-space: nowrap;
+    padding: 10px 155px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.gauge-container {
+    width: 300px;
+    margin: 40px auto;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.gauge-bar {
+    position: relative;
+    height: 20px;
+    background: #eee;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.gauge-fill {
+    height: 100%;
+    background: #ffcccc;
+    border-radius: 10px 0 0 10px;
+    width: 0;
+    transition: width 0.3s ease;
+}
+
+.gauge-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    user-select: none;
+}
+
+.gauge-labels span {
+    cursor: pointer;
+}
+
+.selected-value {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.select-button {
+    padding: 10px 30px;
+    font-size: 16px;
+    border-radius: 20px;
+    border: 2px solid #ffcccc;
+    background-color: #fff;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    min-width: 100px;
+    text-align: center;
+}
+
+.select-button.selected {
+    background-color: #ffcccc;
+    color: #000;
+    border-color: #ff9999;
+}
+
+#labelContainer {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+}
